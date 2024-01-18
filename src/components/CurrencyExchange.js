@@ -7,6 +7,8 @@ export const CurrencyExchange = ({ currencies }) => {
 
     const calculateResult = ({ Amount, currency }) => {
         const result = `https://blockchain.info/tobtc?currency=${currency}&value=${Amount}`
+        
+        return result
     }
 
     return (
