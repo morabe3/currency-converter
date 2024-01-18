@@ -2,7 +2,8 @@ import './App.scss';
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CurrencyList } from './components/CurrencyList'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import { CurrencyExchange } from './components/CurrencyExchange';
 
 function App() {
 	const url = 'https://blockchain.info/ticker'
@@ -43,10 +44,9 @@ function App() {
 			>
 				<Tab eventKey='list' title='Currency List'>
 					<CurrencyList currencies={getCurrencies()} />
-					<button onClick={() => Object.values(object).forEach(item => console.log(item))}>get list</button>
 				</Tab>
 				<Tab eventKey='exchange' title='Currency Exchange'>
-					Currency Exchange
+					<CurrencyExchange currencies={getCurrencies()} />
 				</Tab>
 			</Tabs>
 		</Container>
